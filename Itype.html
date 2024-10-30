@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!--Jqery 연동-->
+    <title>check</title>
+
+    <script>
+    $(document).ready(function() {
+        $(".chk").on("change", function() {
+            var chkTotalI = 0;
+            var chkLen = 7; // 총 3개의 질문
+
+            for (let i = 1; i <= chkLen; i++) {
+                const selectedValue = $(`input[name='Type-I${i}']:checked`).val();
+                if (selectedValue) {
+                    chkTotalI += Number(selectedValue);
+                }
+            }
+            $("#chk_total4").text("총 점수 : " + chkTotalI);
+            localStorage.setItem("chktotal4", chkTotalI); 
+        });
+    });
+    </script>
+
+    <style>
+        #Title {
+            margin: 20px 0;
+            padding-bottom: 20px;
+            font-size: 20px;
+            text-align: center;
+            color: #F4F6FF;
+            background-color: A2D2DF;
+        }
+
+        #Title h1 {
+            font-size: 60px;
+            font-weight: 200;
+        }
+
+        #BackGround {
+            height: 850px;
+            margin: 100px 0 80px 0;
+            border: solid #F4F6FF;
+            border-width: 20px 10px 20px 10px;
+            background-color: #10375C;
+        }
+
+        .question {
+            margin: 80px 0 100px;
+            text-align: center;
+        }
+
+        .eachQ {
+            margin: 20px 0;
+        }
+
+        .question input[type="radio"] {
+            margin-right: 10px;
+        }
+
+        h2 {
+            font-size: 15px;
+            color: #F4F6FF;
+        }
+    </style>
+</head>
+
+
+<body bgcolor ='#229799'>
+
+    <section id="Title">
+        <h1>can you answer?</h1>
+    
+           1 : strongly disagree<br>
+           2 : disagree<br>
+           3 : normal<br>
+           4 : agree<br>
+           5 : strongly agree<br>
+    </section>
+
+        <section id="BackGround">
+             <div class="question">
+                <div class="eachQ">
+                    <h2>this is I-1 question<br><br>
+                    <input type="radio" id="i1_1" name="Type-I1" class="chk" value="1">
+                    <label for="i1_1">option1</label>
+                    <input type="radio" id="i1_2" name="Type-I1" class="chk" value="2">
+                    <label for="i1_2">option2</label>
+                    <input type="radio" id="i1_3" name="Type-I1" class="chk" value="3">
+                    <label for="i1_3">option3</label>
+                    <input type="radio" id="i1_4" name="Type-I1" class="chk" value="4">
+                    <label for="i1_4">option4</label>
+                    <input type="radio" id="i1_5" name="Type-I1" class="chk" value="5">
+                    <label for="r1_5">option5</label></h2>
+                </div>
+                <br>
+                <div class="eachQ">
+                    <h2>this is I-2 question<br><br>
+                    <input type="radio" id="i2_1" name="Type-I2" class="chk" value="1">
+                    <label for="i2_1">option1</label>
+                    <input type="radio" id="i2_2" name="Type-I2" class="chk" value="2">
+                    <label for="i2_2">option2</label>
+                    <input type="radio" id="i2_3" name="Type-I2" class="chk" value="3">
+                    <label for="i2_3">option3</label>
+                    <input type="radio" id="i2_4" name="Type-I2" class="chk" value="4">
+                    <label for="i2_4">option4</label>
+                    <input type="radio" id="i2_5" name="Type-I2" class="chk" value="5">
+                    <label for="i2_5">option5</label></h2>
+                </div>
+                <br>
+                <div class="eachQ">
+                    <h2>this is I-3 question<br><br>
+                    <input type="radio" id="i3_1" name="Type-I3" class="chk" value="1">
+                    <label for="i3_1">option1</label>
+                    <input type="radio" id="i3_2" name="Type-I3" class="chk" value="2">
+                    <label for="i3_2">option2</label>
+                    <input type="radio" id="i3_3" name="Type-I3" class="chk" value="3">
+                    <label for="i3_3">option3</label>
+                    <input type="radio" id="i3_4" name="Type-I3" class="chk" value="4">
+                    <label for="i3_4">option4</label>
+                    <input type="radio" id="i3_5" name="Type-I3" class="chk" value="5">
+                    <label for="i3_5">option5</label></h2>
+                </div>
+                <br>
+                <div class="eachQ">
+                    <h2>this is I-4 question<br><br>
+                    <input type="radio" id="i4_1" name="Type-I4" class="chk" value="1">
+                    <label for="i4_1">option1</label>
+                    <input type="radio" id="i4_2" name="Type-I4" class="chk" value="2">
+                    <label for="i4_2">option2</label>
+                    <input type="radio" id="i4_3" name="Type-I4" class="chk" value="3">
+                    <label for="i4_3">option3</label>
+                    <input type="radio" id="i4_4" name="Type-I4" class="chk" value="4">
+                    <label for="i4_4">option4</label>
+                    <input type="radio" id="i4_5" name="Type-I4" class="chk" value="5">
+                    <label for="i4_5">option5</label></h2>
+                </div>
+                <br>
+                <div class="eachQ">
+                    <h2>this is I-5 question<br><br>
+                    <input type="radio" id="i5_1" name="Type-I5" class="chk" value="1">
+                    <label for="i5_1">option1</label>
+                    <input type="radio" id="i5_2" name="Type-I5" class="chk" value="2">
+                    <label for="i5_2">option2</label>
+                    <input type="radio" id="i5_3" name="Type-I5" class="chk" value="3">
+                    <label for="i5_3">option3</label>
+                    <input type="radio" id="i5_4" name="Type-I5" class="chk" value="4">
+                    <label for="i5_4">option4</label>
+                    <input type="radio" id="i5_5" name="Type-I5" class="chk" value="5">
+                    <label for="i5_5">option5</label></h2>
+                </div>
+                <br>
+                <div class="eachQ">
+                    <h2>this is I-6 question<br><br>
+                    <input type="radio" id="i6_1" name="Type-I6" class="chk" value="1">
+                    <label for="i6_1">option1</label>
+                    <input type="radio" id="i6_2" name="Type-I6" class="chk" value="2">
+                    <label for="i6_2">option2</label>
+                    <input type="radio" id="i6_3" name="Type-I6" class="chk" value="3">
+                    <label for="i6_3">option3</label>
+                    <input type="radio" id="i6_4" name="Type-I6" class="chk" value="4">
+                    <label for="i6_4">option4</label>
+                    <input type="radio" id="i6_5" name="Type-I6" class="chk" value="5">
+                    <label for="i6_5">option5</label></h2>
+                </div>
+                <br>
+                <div class="eachQ">
+                    <h2>this is I-7 question<br><br>
+                    <input type="radio" id="i7_1" name="Type-I7" class="chk" value="1">
+                    <label for="i7_1">option1</label>
+                    <input type="radio" id="i7_2" name="Type-I7" class="chk" value="2">
+                    <label for="i7_2">option2</label>
+                    <input type="radio" id="i7_3" name="Type-I7" class="chk" value="3">
+                    <label for="i7_3">option3</label>
+                    <input type="radio" id="i7_4" name="Type-I7" class="chk" value="4">
+                    <label for="i7_4">option4</label>
+                    <input type="radio" id="i7_5" name="Type-I7" class="chk" value="5">
+                    <label for="i7_5">option5</label></h2>
+                    
+                </div>
+                <input type="button" id="btn1" value="이전" onclick="location.href='http://127.0.0.1:5500/Etype.html'">
+                <input type="button" id="btn2" value="다음" onclick="location.href='http://127.0.0.1:5500/Rtype.html'">
+
+            
+            </div>
+
+            <span id="chk_total4"></span>
+        </section>
+
+
+    
+    </body>
+
+</html>
